@@ -2,8 +2,8 @@
   vars_files:
     - vars/main.yaml
   roles:
-    - { role: geerlingguy.repo-remi }
     - { role: geerlingguy.repo-epel}
+    - { role: geerlingguy.repo-remi }
     - { role: geerlingguy.apache }
     - { role: geerlingguy.mysql }
     - { role: geerlingguy.php }
@@ -14,7 +14,3 @@
     - name: ensure additional php packages are installed
       yum: name={{ item }} state=installed enablerepo=remi
       with_items: additional_php_packages
-
-    - name: display finish msg
-      debug: msg="Provisioning Completed. Now you can access your project at http://{{ target_domain }}/"
-
