@@ -1,0 +1,13 @@
+#
+# local /etc/hosts setting
+#
+- hosts: default
+  vars_files:
+    - vars/main.yaml
+  tasks:
+    - name: set local /etc/hosts file
+      local_action: >
+        lineinfile 
+          dest=/etc/hosts 
+          regexp="^{{ ansible_ssh_host }} {{ target_domain }}" 
+          line="{{ ansible_ssh_host }} {{ target_domain }}"

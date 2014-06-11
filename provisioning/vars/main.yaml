@@ -1,0 +1,31 @@
+---
+
+project_name: "example"
+target_domain: "example.local.com"
+
+# Apache
+apache_enablerepo: "remi"
+apache_create_vhosts: true
+apache_vhosts:
+  - { servername: "{{ target_domain }}", documentroot: "/vagrant" }
+# MySQL
+mysql_enablerepo: "remi"
+mysql_root_password: root
+
+# PHP
+php_enablerepo: "remi"
+php_date_timezone: "Asia/Tokyo"
+php_memory_limit: "256M"
+php_max_execution_time: "90"
+php_upload_max_filesize: "256M"
+additional_php_packages:
+  - php-redis
+  - php-mcrypt
+  - php-pear-Crypt-Blowfish
+  - php-pecl-memcache
+  - php-pecl-memcached
+  - php-pecl-geoip
+  - php-pecl-imagick
+
+# NTP
+ntp_timezone: Asia/Tokyo
