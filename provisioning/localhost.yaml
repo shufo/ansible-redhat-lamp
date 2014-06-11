@@ -11,3 +11,6 @@
           dest=/etc/hosts 
           regexp="^{{ ansible_ssh_host }} {{ target_domain }}" 
           line="{{ ansible_ssh_host }} {{ target_domain }}"
+
+    - name: display message
+      debug: msg="Provisioning finished! Now you can access your project at http://{{ target_domain }}/"
