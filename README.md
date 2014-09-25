@@ -5,25 +5,32 @@ This Repository contains scripts that deploy LAMP stack into a CentOS Vagrant vi
 ## Requirements
 
 * [Vagrant](http://vagrantup.com)
-* [Ansible](http://ansible.github.com)
+* [Ansible](http://ansible.github.com)aa_
 
 ## Setup
 
 - Install Ansible
 
   - with pip
+  
   ```
   pip install ansible
   ```
+  
   - with homebrew (for Mac users)
+  
   ```
   brew install ansible
   ```
+  
   - with yum
+  
   ```
   yum install ansible
   ```
+  
   - with apt-get
+  
   ```
   apt-get install ansible
   ```
